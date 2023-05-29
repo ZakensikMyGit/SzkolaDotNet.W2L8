@@ -161,7 +161,7 @@ namespace SzkolaDotNet.W2L8_petle
             while (number > 0)
             {
                 int modulo = number % 2;
-                binaryNumber = modulo.ToString() + binaryNumber; ;
+                binaryNumber = modulo.ToString() + binaryNumber;
                 number /= 2;
             }
             Console.WriteLine(binaryNumber);
