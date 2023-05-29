@@ -77,11 +77,17 @@ namespace SzkolaDotNet.W2L8_petle
             {
                 for (int j = 0; j < i + 1; j++)
                 {
+                    if (b > yourNumber)
+                        break;
+
                     Console.Write($"{b} ");
                     b++;
                 }
                 Console.WriteLine();
+                if (b > yourNumber)
+                    break;
             }
+
             Console.WriteLine("\n-------------------------------------------------\n");
 
             // Exercise 5:  Liczby do potęgi 3
@@ -102,8 +108,12 @@ namespace SzkolaDotNet.W2L8_petle
 
             //Exercise 6: Diamond
 
-            int diamondSize = 5;
+            int diamondSize = 6;
 
+            if (diamondSize % 2 == 0)
+            {
+                diamondSize++;
+            }
             for (int upSide = 1; upSide <= diamondSize; upSide += 2)
             {
                 for (int i = 1; i <= (diamondSize - upSide) / 2; i++)
@@ -114,10 +124,8 @@ namespace SzkolaDotNet.W2L8_petle
                 {
                     Console.Write("*");
                 }
-
                 Console.WriteLine();
             }
-
             for (int downSide = diamondSize - 2; downSide >= 1; downSide -= 2)
             {
                 for (int i = 1; i <= (diamondSize - downSide) / 2; i++)
@@ -131,11 +139,13 @@ namespace SzkolaDotNet.W2L8_petle
 
                 Console.WriteLine();
             }
+
             Console.WriteLine("\n-------------------------------------------------\n");
 
             // Exercise 7: Odwrócony string
 
             string text = "Abcdefg";
+            Console.WriteLine($"Podana wartość: {text}");
             char[] charText = text.ToLower().ToCharArray();
             Array.Reverse(charText);
             charText[0] = char.ToUpper(charText[0]);
@@ -145,6 +155,7 @@ namespace SzkolaDotNet.W2L8_petle
 
             // Exercise 9: Liczba dziesiętna na binarną
             int number = 41;
+            Console.WriteLine($"Podana wartość: {number}");
             string binaryNumber = "";
 
             while (number > 0)
@@ -160,11 +171,12 @@ namespace SzkolaDotNet.W2L8_petle
 
             int firstNumber = 5;
             int secondNuber = 10;
+            Console.WriteLine($"Podane wartości: {firstNumber} i {secondNuber}");
             int nww;
             int min;
             int max;
 
-            if (firstNumber > b)
+            if (firstNumber > secondNuber)
             {
                 nww = firstNumber;
                 max = firstNumber;
