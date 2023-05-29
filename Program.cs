@@ -99,7 +99,7 @@ namespace SzkolaDotNet.W2L8_petle
             }
             Console.WriteLine($"Wynik sumy dla liczby od 0 do 20 wynosi: {resultExerciseSix}");
             Console.WriteLine("\n-------------------------------------------------\n");
-            
+
             //Exercise 6: Diamond
 
             int diamondSize = 5;
@@ -159,30 +159,30 @@ namespace SzkolaDotNet.W2L8_petle
             // Exercise 10: Najmniejsza wielokrotność dwóch liczb
 
             int firstNumber = 5;
-            int b = 10;
+            int secondNuber = 10;
             int nww;
             int min;
             int max;
 
-            if(a > b)
+            if (firstNumber > b)
             {
-                nww = a;
-                max = a;
-                min = b;
-                
+                nww = firstNumber;
+                max = firstNumber;
+                min = secondNuber;
+
             }
             else
             {
-                nww = b;
-                max = b;
-                min = a;
+                nww = secondNuber;
+                max = secondNuber;
+                min = firstNumber;
             }
             while (nww % min != 0)
             {
                 nww += max;
             }
             Console.WriteLine(nww);
-
+            Console.WriteLine("\n-------------------------------------------------\n");
 
             Console.ReadLine();
         }
