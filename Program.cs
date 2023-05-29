@@ -1,4 +1,5 @@
-﻿using System.IO.IsolatedStorage;
+﻿using System.Drawing;
+using System.IO.IsolatedStorage;
 
 namespace SzkolaDotNet.W2L8_petle
 {
@@ -70,20 +71,117 @@ namespace SzkolaDotNet.W2L8_petle
 
             // Exercise 4: piramida z liczb
             Console.WriteLine("Podaj liczbę: ");
-            Int32.TryParse( Console.ReadLine(), out int yourNumber);
+            Int32.TryParse(Console.ReadLine(), out int yourNumber);
             int b = 1;
             for (int i = 0; i < yourNumber; i++)
             {
-                for (int j = 0; j < i+1; j++)
+                for (int j = 0; j < i + 1; j++)
                 {
                     Console.Write($"{b} ");
                     b++;
                 }
                 Console.WriteLine();
             }
+            Console.WriteLine("\n-------------------------------------------------\n");
 
+            // Exercise 5:  Liczby do potęgi 3
+            for (int i = 1; i < 21; i++)
+            {
+                Console.WriteLine($"Liczba {i} do potęgi 3, wynosi: {Math.Pow(i, 3)}");
+            }
+            Console.WriteLine("\n-------------------------------------------------\n");
 
+            //Exercise 6: Obliczanie liczby wg danego wzoru
+            double resultExerciseSix = 0;
+            for (double i = 1; i < 21; i++)
+            {
+                resultExerciseSix += (1 / i);
+            }
+            Console.WriteLine($"Wynik sumy dla liczby od 0 do 20 wynosi: {resultExerciseSix}");
+            Console.WriteLine("\n-------------------------------------------------\n");
+            
+            //Exercise 6: Diamond
 
+            int diamondSize = 5;
+
+            for (int upSide = 1; upSide <= diamondSize; upSide += 2)
+            {
+                for (int i = 1; i <= (diamondSize - upSide) / 2; i++)
+                {
+                    Console.Write(" ");
+                }
+                for (int j = 1; j <= upSide; j++)
+                {
+                    Console.Write("*");
+                }
+
+                Console.WriteLine();
+            }
+
+            for (int downSide = diamondSize - 2; downSide >= 1; downSide -= 2)
+            {
+                for (int i = 1; i <= (diamondSize - downSide) / 2; i++)
+                {
+                    Console.Write(" ");
+                }
+                for (int j = 1; j <= downSide; j++)
+                {
+                    Console.Write("*");
+                }
+
+                Console.WriteLine();
+            }
+            Console.WriteLine("\n-------------------------------------------------\n");
+
+            // Exercise 7: Odwrócony string
+
+            string text = "Abcdefg";
+            char[] charText = text.ToLower().ToCharArray();
+            Array.Reverse(charText);
+            charText[0] = char.ToUpper(charText[0]);
+            string newText = new string(charText);
+            Console.WriteLine(newText);
+            Console.WriteLine("\n-------------------------------------------------\n");
+
+            // Exercise 9: Liczba dziesiętna na binarną
+            int number = 41;
+            string binaryNumber = "";
+
+            while (number > 0)
+            {
+                int modulo = number % 2;
+                binaryNumber = modulo.ToString() + binaryNumber; ;
+                number /= 2;
+            }
+            Console.WriteLine(binaryNumber);
+            Console.WriteLine("\n-------------------------------------------------\n");
+
+            // Exercise 10: Najmniejsza wielokrotność dwóch liczb
+
+            int firstNumber = 5;
+            int b = 10;
+            int nww;
+            int min;
+            int max;
+
+            if(a > b)
+            {
+                nww = a;
+                max = a;
+                min = b;
+                
+            }
+            else
+            {
+                nww = b;
+                max = b;
+                min = a;
+            }
+            while (nww % min != 0)
+            {
+                nww += max;
+            }
+            Console.WriteLine(nww);
 
 
             Console.ReadLine();
